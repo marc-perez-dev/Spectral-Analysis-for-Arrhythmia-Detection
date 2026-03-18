@@ -1,0 +1,32 @@
+# Documents and images
+*.pdf
+*.png
+*.jpg
+*.jpeg
+
+# MATLAB temporary and compiled files
+*.asv
+*.m~
+*.fig
+*.mex*
+*.mat
+!models/*.mat  # Preserve pre-trained models
+
+# Datasets and Results (Sensitive information)
+data/
+results/
+"MIT - VFDB/"
+"Señales de prueba/"
+"Ejercicio práctico análisis espectral de EGM/"
+MARC/
+*.dat
+*.hea
+*.atr
+*.txt
+
+# Compressed and OS files
+*.rar
+*.zip
+.DS_Store
+Thumbs.db
+desktop.ini
