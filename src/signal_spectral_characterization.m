@@ -29,18 +29,9 @@ fc_pico = Hz(imax);
 disp(['Frecuencia de pico principal = ', num2str(fc_pico), ' Hz'])
 
     %% Ancho de pico principal
-media_potencia = valor_max/sqrt(2);
+[idx_derecha, idx_izquierda] = sacarLados(imax,valor_max,abs_transformadaFourier);
 
-izq = imax;
-while izq > 1 && abs_transformadaFourier(izq) >= media_potencia
-    izq = izq - 1;
-end
-der = imax;
-while der < length(abs_transformadaFourier) && abs_transformadaFourier(der) >= media_potencia
-    der = der + 1;
-end
-
-ancho_pp = Hz(der) - Hz(izq);
+ancho_pp = Hz(idx_derecha) - Hz(idx_izquierda);
 disp(['Ancho de pico principal = ', num2str(ancho_pp), ' Hz'])
 
     %% Armónicos
